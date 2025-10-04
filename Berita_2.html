@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kerusakan Ozon dan Pentingnya Mengurangi Jejak Karbon | Adiwiyata SMP Tunas Agro</title>
+    <!-- Memuat Tailwind CSS untuk styling modern -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Menggunakan font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome untuk ikon-ikon yang menarik -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f0fdf4;
+      }
+      /* Kustom CSS untuk menambah jarak vertikal antar paragraf.
+           Ini diperlukan karena class "prose" secara internal menimpa utility margin bawaan Tailwind. */
+        .prose p {
+            margin-bottom: 1.5rem; /* Menambahkan margin bawah yang lebih besar untuk paragraf (setara mb-6) */
+        }
+    </style>
+  </head>
+  <body class="text-gray-800">
+    <!-- Header & Navigasi -->
+    <header class="bg-green-700 text-white shadow-lg fixed top-0 w-full z-50">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a href="index.html">
+          <img
+            src="img/logo adiwiyata SMPTA.png"
+            alt="Logo Adiwiyata SMP Tunas Agro"
+            class="h-12"
+          />
+        <nav class="hidden md:flex space-x-6">
+          <a
+            href="index.html#berita"
+            class="hover:text-green-200 transition duration-300"
+            >Kembali ke Berita</a
+          >
+        </nav>
+        <!-- Tombol untuk menu mobile -->
+        <button
+          id="menu-toggle"
+          class="md:hidden text-white focus:outline-none"
+        >
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      <!-- Menu Mobile -->
+      <div id="mobile-menu" class="hidden md:hidden bg-green-800 p-4">
+        <a
+          href="index.html#berita"
+          class="block py-2 px-4 hover:bg-green-700 transition duration-300 rounded"
+          >Kembali ke Berita</a
+        >
+      </div>
+    </header>
+
+    <!-- Konten Halaman Berita -->
+    <main class="pt-24 container mx-auto px-4 py-12">
+      <article class="bg-white p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
+        <h1 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">
+          Kerusakan Ozon dan Pentingnya Mengurangi Jejak Karbon
+        </h1>
+        <p class="text-sm text-gray-500 mb-6">Diposting pada 10 Oktober 2025</p>
+        <img
+          src="img/Ozon_1.JPG"
+          alt="Gambar utama berita"
+          class="w-full h-auto rounded-lg mb-8"
+        />
+        <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed text-justify">
+          <p>
+            Salah satu penyebab kerusakan ozon adalah meningkatnya gas rumah kaca yang berasal dari aktivitas manusia. Misalnya, penggunaan kendaraan bermotor yang berlebihan, pembakaran sampah plastik, serta penggunaan energi listrik yang boros. Semua itu menambah “jejak karbon” atau jumlah emisi karbon yang kita hasilkan.
+          </p>
+          <p>
+            Mengurangi jejak karbon berarti berusaha mengurangi hal-hal yang bisa menambah polusi udara. Caranya bisa sederhana, seperti mematikan lampu saat tidak digunakan, berjalan kaki atau bersepeda untuk jarak dekat, membawa botol minum sendiri agar tidak membeli minuman kemasan plastik, dan menanam pohon.
+          </p>
+          <p>
+            SMP Tunas Agro sebagai sekolah Adiwiyata juga mengajak para siswanya untuk peduli terhadap isu ini. Beberapa kegiatan yang dilakukan antara lain workshop peringatan World Ozon Day bekerja sama dengan Agronomi PT Agro Indomas dan memberikan Reduce The Carbon Footprint Challenge kepada siswa siswi. Challenge sederhana seperti mematikan lampu jika tidak dipakai, menggunakan air dengan bijak, serta berrbagai kampanye hemat energi di kelas, diharapkan dapat mengajak para siswa untuk terbiasa menjaga lingkungan dan ikut serta mengurangi jejak karbon sejak dini.
+          </p>
+          <img
+          src="img/Ozon_2.jpg"
+          alt="Gambar utama berita"
+          class="w-full h-auto rounded-lg mb-8"
+        />
+          <p>
+            Ingat, bumi ini adalah rumah kita bersama. Kalau kita menjaga lapisan ozon dan mengurangi jejak karbon, berarti kita sudah ikut melindungi masa depan agar tetap hijau, bersih, dan sehat.
+          </p>
+        </div>
+        <a
+          href="index.html"
+          class="inline-block mt-8 text-green-600 font-medium hover:underline"
+          ><i class="fas fa-arrow-left mr-1"></i> Kembali ke Beranda</a
+        >
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-8 text-center mt-12">
+      <p>&copy; 2024 Adiwiyata SMP Tunas Agro. Hak Cipta Dilindungi.</p>
+      <p class="mt-2 text-sm">Dibuat dengan semangat peduli lingkungan.</p>
+    </footer>
+
+    <!-- Skrip JavaScript untuk menu mobile -->
+    <script>
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          if (mobileMenu.classList.contains("hidden")) {
+            mobileMenu.classList.remove("hidden");
+          } else {
+            mobileMenu.classList.add("hidden");
+          }
+        });
+    </script>
+  </body>
+</html>

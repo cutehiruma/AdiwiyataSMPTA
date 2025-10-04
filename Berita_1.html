@@ -23,6 +23,11 @@
         font-family: "Inter", sans-serif;
         background-color: #f0fdf4;
       }
+      /* Kustom CSS untuk menambah jarak vertikal antar paragraf.
+           Ini diperlukan karena class "prose" secara internal menimpa utility margin bawaan Tailwind. */
+        .prose p {
+            margin-bottom: 1.5rem; /* Menambahkan margin bawah yang lebih besar untuk paragraf (setara mb-6) */
+        }
     </style>
   </head>
   <body class="text-gray-800">
@@ -74,7 +79,7 @@
           alt="Gambar utama berita"
           class="w-full h-auto rounded-lg mb-8"
         />
-        <div class="prose max-w-none text-gray-700 leading-relaxed">
+        <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed text-justify">
           <p>
             Dalam rangka memperingati World Clean Up Day yang jatuh pada tanggan 20 September, SMP Tunas Agro mengadakan kegiatan bersih-bersih lingkungan pada Sabtu 20 September 2025. Kegiatan ini menjadi salah satu bentuk nyata komitmen sekolah dalam menjaga lingkungan sekaligus memperkuat status SMP Tunas Agro sebagai sekolah Adiwiyata.
           </p>
@@ -83,10 +88,15 @@
           </p>
           <p>
             Kegiatan ini diharapkan dapat menumbuhkan kesadaran siswa untuk peduli pada lingkungan sejak dini. Melalui World Clean Up Day, anak-anak belajar langsung bagaimana menjaga kebersihan lingkungan, tidak hanya di sekolah, tetapi juga di masyarakat luas.
-          </p>
           <p>
             Suasana gotong royong sangat terasa saat para siswa mengumpulkan sampah plastik, menyapu halaman, dan memilah sampah organik, anorganik maupun Redsidu. Beberapa siswa bahkan dengan antusias ikut membersihkan parit dan area hijau di sekitar sekolah. Dalam kegiatan ini, terkumpul 51 kg sampah anorganik, 49 kg sampah organik, dan 28 kg sampah residu. Sampah-sampah yang dikumpulkan siswa ini selanjutnya disalurkan ke penampungan sampah PT Agro Indomas.
           </p>
+          </p>
+          <img
+          src="img/WCDI_2.jpeg"
+          alt="Gambar utama berita"
+          class="w-full h-auto rounded-lg mb-8"
+        />
           <p>
             Melalui kegiatan ini, SMP Tunas Agro tidak hanya memperingati World Clean Up Day, tetapi juga menunjukkan komitmen kuatnya sebagai sekolah Adiwiyata yang peduli pada keberlanjutan lingkungan. Harapannya, aksi kecil ini dapat memberikan dampak besar bagi kebersihan dan kelestarian lingkungan di sekitar sekolah maupun masyarakat luas.
           </p>
