@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Adiwiyata SMP Tunas Agro</title>
+    <title>Adiwiyata SMP Tunas Agro - Sekolah Peduli Lingkungan</title>
     <!-- Memuat Tailwind CSS untuk styling modern -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Menggunakan font Inter dari Google Fonts -->
@@ -21,318 +21,394 @@
     <style>
       body {
         font-family: "Inter", sans-serif;
-        background-color: #f0fdf4;
+        background-color: #f8fafc; /* light slate-50 */
       }
-
-      /* CSS untuk slider */
+      /* Style kustom untuk slider di Hero Section */
       .slider-container {
         width: 100%;
         height: 100%;
-        position: relative;
+        position: absolute;
+        top: 0;
+        left: 0;
         overflow: hidden;
-        border-radius: 12px;
       }
-
-      .slider-image {
+      .slider-container img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         position: absolute;
-        top: 0;
-        left: 0;
         opacity: 0;
-        transition: opacity 1s ease-in-out;
+        transition: opacity 1.5s ease-in-out;
       }
-
-      .slider-image.active {
+      .slider-container img.active {
         opacity: 1;
+      }
+      /* Style kustom untuk Galeri Fakta Dinamis (NEW) */
+      #fact-slider-content {
+        transition: opacity 0.7s ease-in-out;
+      }
+      /* Transisi halus untuk scroll-margin agar navigasi terasa mulus */
+      section {
+        scroll-margin-top: 5rem;
       }
     </style>
   </head>
   <body class="text-gray-800">
     <!-- Header & Navigasi -->
-    <header class="bg-green-700 text-white shadow-lg fixed top-0 w-full z-50">
+    <header
+      class="bg-white shadow-md fixed top-0 w-full z-50 transition duration-300"
+    >
       <div
-        class="container mx-auto px-4 py-4 flex justify-between items-center"
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
       >
-        <a href="index.html">
-          <img
-            src="img/logo adiwiyata SMPTA.png"
-            alt="Logo Adiwiyata SMP Tunas Agro"
-            class="h-12"
-          />
+        <!-- Logo Sekolah (diperbesar dan menggunakan warna hijau gelap) -->
+        <a
+          href="#home"
+          class="text-2xl font-extrabold text-emerald-700 tracking-wider"
+        >
+          <i class="fas fa-leaf mr-2"></i> Adiwiyata SMP TA
         </a>
-        <nav class="hidden md:flex space-x-6">
-          <a href="#berita" class="hover:text-green-200 transition duration-300"
-            >Berita</a
-          >
-          <a href="#galeri" class="hover:text-green-200 transition duration-300"
-            >Galeri</a
+        <!-- Navigasi Desktop -->
+        <nav class="hidden md:flex space-x-8 text-lg font-medium">
+          <a
+            href="#about"
+            class="text-gray-600 hover:text-emerald-600 transition duration-300"
+            >Tentang</a
           >
           <a
-            href="#tentang"
-            class="hover:text-green-200 transition duration-300"
-            >Tentang Kami</a
+            href="#program"
+            class="text-gray-600 hover:text-emerald-600 transition duration-300"
+            >Program</a
           >
-          <a href="#kontak" class="hover:text-green-200 transition duration-300"
+          <a
+            href="#berita"
+            class="text-gray-600 hover:text-emerald-600 transition duration-300"
+            >Berita</a
+          >
+          <a
+            href="#kontak"
+            class="text-gray-600 hover:text-emerald-600 transition duration-300"
             >Kontak</a
           >
         </nav>
         <!-- Tombol untuk menu mobile -->
         <button
           id="menu-toggle"
-          class="md:hidden text-white focus:outline-none"
+          class="md:hidden text-gray-600 focus:outline-none"
         >
           <i class="fas fa-bars text-xl"></i>
         </button>
       </div>
       <!-- Menu Mobile -->
-      <div id="mobile-menu" class="hidden md:hidden bg-green-800 p-4">
+      <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
+        <a
+          href="#about"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Tentang</a
+        >
+        <a
+          href="#program"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Program</a
+        >
         <a
           href="#berita"
-          class="block py-2 px-4 hover:bg-green-700 transition duration-300 rounded"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
           >Berita</a
         >
         <a
-          href="#galeri"
-          class="block py-2 px-4 hover:bg-green-700 transition duration-300 rounded"
-          >Galeri</a
-        >
-        <a
-          href="#tentang"
-          class="block py-2 px-4 hover:bg-green-700 transition duration-300 rounded"
-          >Tentang Kami</a
-        >
-        <a
           href="#kontak"
-          class="block py-2 px-4 hover:bg-green-700 transition duration-300 rounded"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
           >Kontak</a
         >
       </div>
     </header>
 
-    <!-- Konten Utama -->
-    <main class="pt-24">
-      <!-- Bagian Beranda -->
-      <section id="beranda" class="container mx-auto px-4 py-16 text-center">
-        <h1 class="text-4xl md:text-5xl font-extrabold text-green-800 mb-4">
-          Selamat Datang di Website Adiwiyata SMP Tunas Agro
-        </h1>
-        <p class="text-lg md:text-xl text-gray-600 mb-8">
-          Bersama, kita wujudkan sekolah yang peduli dan berbudaya lingkungan.
-        </p>
-        <div
-          class="relative w-full max-w-4xl mx-auto rounded-xl shadow-lg overflow-hidden"
+    <!-- 1. Hero Section (Banner Utama dengan Slider Otomatis) -->
+    <section
+      id="home"
+      class="relative h-[85vh] flex items-center justify-center"
+    >
+      <div class="slider-container">
+        <!-- Ganti URL placeholder ini dengan URL gambar asli kegiatan Adiwiyata Anda -->
+        <img src="img/head_1.jpeg" alt="Kegiatan Adiwiyata 1" class="active" />
+        <img src="img/head_2.jpeg" alt="Kegiatan Adiwiyata 2" />
+        <img src="img/head_3.jpeg" alt="Kegiatan Adiwiyata 3" />
+      </div>
+
+      <div
+        class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-4 text-center"
+      >
+        <h1
+          class="text-white text-4xl md:text-6xl font-extrabold mb-4 animate-fadeIn"
         >
-          <!-- Slider Image Carousel -->
-          <div class="slider-container" style="padding-top: 50%">
-            <!-- Ratio 2:1 -->
-            <img
-              src="img/head_1.jpeg"
-              alt="Kegiatan Adiwiyata 1"
-              class="slider-image active"
-            />
-            <img
-              src="img/head_2.jpeg"
-              alt="Kegiatan Adiwiyata 2"
-              class="slider-image"
-            />
-            <img
-              src="img/head_3.jpeg"
-              alt="Kegiatan Adiwiyata 3"
-              class="slider-image"
-            />
+          Wujudkan Sekolah Hijau, Masa Depan Cemerlang
+        </h1>
+        <p class="text-white text-lg md:text-xl max-w-2xl mb-8 font-light">
+          SMP Tunas Agro berkomitmen menciptakan lingkungan sekolah yang peduli
+          dan berbudaya lingkungan.
+        </p>
+        <a
+          href="#program"
+          class="bg-emerald-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-emerald-600 transition duration-300 uppercase tracking-wider"
+        >
+          Lihat Program Kami
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. Tentang Kami Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <!-- Kolom Kiri: Visi Misi -->
+          <div>
+            <span
+              class="text-sm font-semibold uppercase text-emerald-600 mb-2 block"
+              >Visi & Misi</span
+            >
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
+              Menciptakan Generasi Cinta Lingkungan
+            </h2>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Kami bertujuan untuk mengintegrasikan nilai-nilai lingkungan ke
+              dalam seluruh aspek pendidikan, mulai dari kurikulum, kegiatan
+              siswa, hingga manajemen sekolah.
+            </p>
+
+            <h3 class="text-xl font-semibold text-emerald-700 mb-3">
+              <i class="fas fa-seedling mr-2"></i> Visi Adiwiyata
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Menjadi sekolah Adiwiyata mandiri yang unggul dalam pelestarian
+              fungsi lingkungan dan pembangunan berkelanjutan.
+            </p>
+
+            <h3 class="text-xl font-semibold text-emerald-700 mb-3">
+              <i class="fas fa-clipboard-list mr-2"></i> Pilar Misi
+            </h3>
+            <ul class="space-y-2 text-gray-600 list-inside">
+              <li>Mengembangkan kebijakan sekolah berwawasan lingkungan.</li>
+              <li>Melaksanakan kurikulum berbasis lingkungan.</li>
+              <li>
+                Mengembangkan sarana dan prasarana penunjang pelestarian
+                lingkungan.
+              </li>
+              <li>
+                Mengembangkan partisipasi aktif seluruh warga sekolah dalam aksi
+                nyata.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kolom Kanan: Galeri Fakta Dinamis (Diubah menjadi Slider) -->
+          <div class="flex justify-center h-[28rem] md:h-96 relative">
+            <div
+              id="fact-slider-container"
+              class="w-full max-w-md bg-white p-8 rounded-xl shadow-2xl border border-gray-100 flex flex-col justify-center items-center"
+            >
+              <div id="fact-slider-content" class="text-center w-full">
+                <!-- Konten Galeri Fakta akan dirender di sini oleh JavaScript -->
+              </div>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <hr class="border-green-300 my-8" />
-
-      <!-- Bagian Berita Terbaru -->
-      <section id="berita" class="container mx-auto px-4 py-12">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-green-800 text-center mb-10"
+    <!-- 3. Program Unggulan Section -->
+    <section id="program" class="py-20 bg-slate-50">
+      <div class="container mx-auto px-4 text-center">
+        <span
+          class="text-sm font-semibold uppercase text-emerald-600 mb-2 block"
+          >Fokus Utama</span
         >
-          Berita Terbaru
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-12">
+          Program Adiwiyata Unggulan
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Berita 1 -->
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Kartu Program 1 -->
           <div
-            class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+            class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-500 transform hover:translate-y-[-5px]"
+          >
+            <div class="text-4xl text-emerald-500 mb-4">
+              <i class="fas fa-recycle"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">
+              Bank Sampah Digital
+            </h3>
+            <p class="text-gray-600">
+              Sistem pengelolaan sampah terpadu yang mendorong siswa untuk
+              memilah sampah berbasis poin dan hadiah.
+            </p>
+          </div>
+          <!-- Kartu Program 2 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-500 transform hover:translate-y-[-5px]"
+          >
+            <div class="text-4xl text-emerald-500 mb-4">
+              <i class="fas fa-tint"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">
+              Panen Air Hujan (PAH)
+            </h3>
+            <p class="text-gray-600">
+              Pemanfaatan air hujan untuk penyiraman tanaman di lingkungan
+              sekolah, menghemat penggunaan air bersih.
+            </p>
+          </div>
+          <!-- Kartu Program 3 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-500 transform hover:translate-y-[-5px]"
+          >
+            <div class="text-4xl text-emerald-500 mb-4">
+              <i class="fas fa-book-reader"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-3">
+              Kurikulum Hijau
+            </h3>
+            <p class="text-gray-600">
+              Integrasi isu lingkungan hidup ke dalam semua mata pelajaran untuk
+              kesadaran yang lebih mendalam.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Berita Terbaru Section -->
+    <section id="berita" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <span
+          class="text-sm font-semibold uppercase text-emerald-600 mb-2 block text-center"
+          >Dokumentasi</span
+        >
+        <h2
+          class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center"
+        >
+          Berita dan Kegiatan Terbaru
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Kartu Berita 1 (Mengarah ke berita-1.html) -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:shadow-xl transition duration-300"
           >
             <img
+              class="w-full h-48 object-cover"
               src="img/WCDI_1.jpeg"
               alt="Peringatan World Clean Up Day"
-              class="w-full h-48 object-cover"
             />
-            <div class="p-6">
-              <h3 class="text-xl font-semibold text-green-700 mb-2">
+            <div class="p-5">
+              <p class="text-xs text-gray-500 mb-2">10 Okt 2025</p>
+              <h3
+                class="text-lg font-semibold text-gray-800 mb-3 hover:text-emerald-600 transition duration-300"
+              >
                 Peringatan World Clean Up Day di SMP Tunas Agro
               </h3>
-              <p class="text-gray-600 mb-4">
-                Dalam rangka memperingati World Clean Up Day yang jatuh pada
-                tanggan 20 September, SMP Tunas Agro mengadakan kegiatan
-                bersih-bersih lingkungan
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                Dalam semangat gerakan global World Clean Up Day, SMP Tunas Agro
+                mengadakan aksi bersih-bersih lingkungan sekolah dan area
+                sekitarnya...
               </p>
               <a
                 href="Berita_1.html"
-                class="text-green-600 font-medium hover:underline"
-                >Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i
+                class="text-emerald-600 font-medium text-sm hover:underline"
+                >Baca Selengkapnya
+                <i class="fas fa-arrow-right ml-1 text-xs"></i
               ></a>
             </div>
           </div>
-          <!-- Berita 2 -->
+
+          <!-- Kartu Berita 2 -->
           <div
-            class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+            class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:shadow-xl transition duration-300"
           >
             <img
-              src="img/Ozon_1.JPG"
-              alt="Pentingnya Mengurangi Jejak Karbon"
               class="w-full h-48 object-cover"
+              src="img/Ozon_1.JPG"
+              alt="Panen Air Hujan"
             />
-            <div class="p-6">
-              <h3 class="text-xl font-semibold text-green-700 mb-2">
+            <div class="p-5">
+              <p class="text-xs text-gray-500 mb-2">10 Oktober 2025</p>
+              <h3
+                class="text-lg font-semibold text-gray-800 mb-3 hover:text-emerald-600 transition duration-300"
+              >
                 Kerusakan Ozon dan Pentingnya Mengurangi Jejak Karbon
               </h3>
-              <p class="text-gray-600 mb-4">
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
                 Mengurangi jejak karbon berarti berusaha mengurangi hal-hal yang
-                bisa menambah polusi udara. Caranya bisa sederhana,
+                bisa menambah polusi udara. Caranya bisa sederhana.
               </p>
               <a
-                href="Berita_2.html"
-                class="text-green-600 font-medium hover:underline"
-                >Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i
+                href="#"
+                class="text-emerald-600 font-medium text-sm hover:underline"
+                >Baca Selengkapnya
+                <i class="fas fa-arrow-right ml-1 text-xs"></i
               ></a>
             </div>
           </div>
-          <!-- Berita 3 -->
+
+          <!-- Kartu Berita 3 -->
           <div
-            class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
+            class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:shadow-xl transition duration-300"
           >
             <img
-              src="https://placehold.co/600x400/96B99E/FFFFFF?text=..........."
-              alt="......"
               class="w-full h-48 object-cover"
+              src="https://placehold.co/600x400/77DD77/FFFFFF?text=Bank+Sampah"
+              alt="Bank Sampah Digital"
             />
-            <div class="p-6">
-              <h3 class="text-xl font-semibold text-green-700 mb-2">
-                Wait for Our Next Activities
+            <div class="p-5">
+              <p class="text-xs text-gray-500 mb-2">20 Agu 2025</p>
+              <h3
+                class="text-lg font-semibold text-gray-800 mb-3 hover:text-emerald-600 transition duration-300"
+              >
+                Launching Bank Sampah Digital: Lebih Mudah, Lebih Seru!
               </h3>
-              <p class="text-gray-600 mb-4">Be Ready</p>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                Bank Sampah sekolah kini terintegrasi digital, memungkinkan
+                siswa melihat saldo poin mereka secara real-time dan menukarnya
+                dengan berbagai hadiah menarik.
+              </p>
               <a
-                href="berita-3.html"
-                class="text-green-600 font-medium hover:underline"
-                >Baca Selengkapnya <i class="fas fa-arrow-right ml-1"></i
+                href="#"
+                class="text-emerald-600 font-medium text-sm hover:underline"
+                >Baca Selengkapnya
+                <i class="fas fa-arrow-right ml-1 text-xs"></i
               ></a>
             </div>
           </div>
         </div>
-      </section>
 
-      <hr class="border-green-300 my-8" />
-
-      <!-- Bagian Galeri -->
-      <section id="galeri" class="container mx-auto px-4 py-12">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-green-800 text-center mb-10"
-        >
-          Galeri Kegiatan
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          <div class="rounded-xl overflow-hidden shadow-md group">
-            <img
-              src="img/Galeri_inovasi_2.jpeg"
-              alt="Foto Galeri 1"
-              class="w-full h-full object-cover transform group-hover:scale-110 transition duration-300"
-            />
-          </div>
-          <div class="rounded-xl overflow-hidden shadow-md group">
-            <img
-              src="img/galeri_energi_1.jpeg"
-              alt="Foto Galeri 2"
-              class="w-full h-full object-cover transform group-hover:scale-110 transition duration-300"
-            />
-          </div>
-          <div class="rounded-xl overflow-hidden shadow-md group">
-            <img
-              src="img/galeri_kebersihan_1.jpeg"
-              alt="Foto Galeri 3"
-              class="w-full h-full object-cover transform group-hover:scale-110 transition duration-300"
-            />
-          </div>
-          <div class="rounded-xl overflow-hidden shadow-md group">
-            <img
-              src="img/galeri_penanaman_1.jpeg"
-              alt="Foto Galeri 4"
-              class="w-full h-full object-cover transform group-hover:scale-110 transition duration-300"
-            />
-          </div>
-          <div class="rounded-xl overflow-hidden shadow-md group">
-            <img
-              src="img/galeri_sampah_2.jpeg"
-              alt="Foto Galeri 5"
-              class="w-full h-full object-cover transform group-hover:scale-110 transition duration-300"
-            />
-          </div>
-          <div class="rounded-xl overflow-hidden shadow-md group">
-            <img
-              src="img/galeri_sampah_3.jpeg"
-              alt="Foto Galeri 6"
-              class="w-full h-full object-cover transform group-hover:scale-110 transition duration-300"
-            />
-          </div>
-          <div class="rounded-xl overflow-hidden shadow-md group">
-            <img
-              src="img/galeri_Air_1.jpeg"
-              alt="Foto Galeri 7"
-              class="w-full h-full object-cover transform group-hover:scale-110 transition duration-300"
-            />
-          </div>
-          <div class="rounded-xl overflow-hidden shadow-md group">
-            <img
-              src="img/galeri_inovasi_1.jpeg"
-              alt="Foto Galeri 8"
-              class="w-full h-full object-cover transform group-hover:scale-110 transition duration-300"
-            />
-          </div>
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="inline-block bg-emerald-100 text-emerald-700 font-bold py-3 px-8 rounded-full border border-emerald-300 hover:bg-emerald-200 transition duration-300"
+          >
+            Lihat Semua Berita
+          </a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <hr class="border-green-300 my-8" />
-
-      <!-- Bagian Tentang Kami -->
-      <section id="tentang" class="container mx-auto px-4 py-12">
-        <h2
-          class="text-3xl md:text-4xl font-bold text-green-800 text-center mb-10"
+    <!-- 5. Hubungi Kami Section -->
+    <section id="kontak" class="py-20 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <span
+          class="text-sm font-semibold uppercase text-emerald-600 mb-2 block text-center"
+          >Hubungi Kami</span
         >
-          Tentang Adiwiyata
-        </h2>
-        <div class="bg-white p-8 rounded-xl shadow-lg max-w-3xl mx-auto">
-          <p class="text-gray-700 leading-relaxed mb-4">
-            Program Adiwiyata adalah salah satu upaya pemerintah untuk mendorong
-            terciptanya pengetahuan dan kesadaran warga sekolah dalam upaya
-            pelestarian lingkungan hidup. Tujuannya adalah untuk menciptakan
-            sekolah yang hijau, bersih, dan nyaman bagi seluruh warganya.
-          </p>
-          <p class="text-gray-700 leading-relaxed">
-            Di SMP Tunas Agro, kami berkomitmen penuh untuk melaksanakan program
-            ini melalui berbagai kegiatan nyata, mulai dari pengelolaan sampah,
-            penanaman pohon, hingga edukasi lingkungan kepada siswa-siswi.
-          </p>
-        </div>
-      </section>
-
-      <hr class="border-green-300 my-8" />
-
-      <!-- Bagian Kontak -->
-      <section id="kontak" class="container mx-auto px-4 py-12">
         <h2
-          class="text-3xl md:text-4xl font-bold text-green-800 text-center mb-10"
+          class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center"
         >
-          Hubungi Kami
+          Bergabung atau Bertanya
         </h2>
-        <div class="bg-white p-8 rounded-xl shadow-lg max-w-2xl mx-auto">
-          <form>
+
+        <div
+          class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-xl border border-gray-100"
+        >
+          <form action="URL_WEB_APP_ANDA" method="POST">
             <div class="mb-4">
               <label for="nama" class="block text-gray-700 font-medium mb-2"
                 >Nama Lengkap</label
@@ -340,7 +416,9 @@
               <input
                 type="text"
                 id="nama"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                name="nama"
+                required
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 transition duration-200"
               />
             </div>
             <div class="mb-4">
@@ -350,7 +428,9 @@
               <input
                 type="email"
                 id="email"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                name="email"
+                required
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 transition duration-200"
               />
             </div>
             <div class="mb-6">
@@ -360,52 +440,197 @@
               <textarea
                 id="pesan"
                 rows="4"
-                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                name="pesan"
+                required
+                class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 transition duration-200"
               ></textarea>
             </div>
+            <!-- Pastikan ganti URL_WEB_APP_ANDA dengan URL Google Apps Script Anda! -->
             <button
               type="submit"
-              class="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition duration-300"
+              class="w-full bg-emerald-600 text-white font-bold py-3 rounded-lg hover:bg-emerald-700 transition duration-300 shadow-md"
             >
-              Kirim Pesan
+              Kirim Pesan <i class="fas fa-paper-plane ml-2"></i>
             </button>
           </form>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-green-800 text-white py-8 text-center mt-12">
-      <p>&copy; 2024 Adiwiyata SMP Tunas Agro. Hak Cipta Dilindungi.</p>
-      <p class="mt-2 text-sm">Dibuat dengan semangat peduli lingkungan.</p>
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Kolom 1: Logo & Deskripsi -->
+        <div>
+          <h3 class="text-2xl font-extrabold text-emerald-400 mb-4">
+            <i class="fas fa-leaf mr-2"></i> SMP TA Adiwiyata
+          </h3>
+          <p class="text-gray-400 text-sm">
+            Pusat pendidikan yang berkomitmen penuh pada pelestarian lingkungan
+            dan budaya hijau.
+          </p>
+        </div>
+
+        <!-- Kolom 2: Navigasi Cepat -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Navigasi</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a
+                href="#about"
+                class="text-gray-400 hover:text-emerald-400 transition"
+                >Tentang Kami</a
+              >
+            </li>
+            <li>
+              <a
+                href="#program"
+                class="text-gray-400 hover:text-emerald-400 transition"
+                >Program Unggulan</a
+              >
+            </li>
+            <li>
+              <a
+                href="#berita"
+                class="text-gray-400 hover:text-emerald-400 transition"
+                >Berita Terbaru</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: Kontak -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Hubungi</h4>
+          <p class="text-gray-400 text-sm">Email: kontak.smpta@gmail.com</p>
+          <p class="text-gray-400 text-sm mt-1">Telp: 0821-5515-6080</p>
+          <p class="text-gray-400 text-sm mt-1">
+            Alamat: PT Agro Indomas, Jl. Jendral Sudirman km. 75, Sampit -
+            Pangkalan Bun
+          </p>
+        </div>
+
+        <!-- Kolom 4: Sosial Media -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Ikuti Kami</h4>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center border-t border-gray-700 pt-6 mt-8">
+        <p class="text-gray-500 text-sm">
+          &copy; 2025 Adiwiyata SMP Tunas Agro. All rights reserved.
+        </p>
+      </div>
     </footer>
 
-    <!-- Skrip JavaScript untuk menu mobile dan slider -->
+    <!-- Skrip JavaScript -->
     <script>
-      // Skrip untuk menu mobile
+      // Data Fakta untuk Galeri Dinamis di Bagian Tentang Kami
+      const aboutFacts = [
+        {
+          title: "Pengurangan Sampah",
+          value: "85%",
+          icon: "fas fa-trash-restore-alt",
+          color: "text-red-500",
+          detail:
+            "Sampah yang berhasil didaur ulang atau dikurangi setiap bulan.",
+          bg: "bg-red-50",
+        },
+        {
+          title: "Konservasi Air",
+          value: "30%",
+          icon: "fas fa-tint",
+          color: "text-blue-500",
+          detail: "Penghematan air bersih berkat sistem Panen Air Hujan.",
+          bg: "bg-blue-50",
+        },
+        {
+          title: "Area Hijau",
+          value: "45%",
+          icon: "fas fa-tree",
+          color: "text-green-600",
+          detail:
+            "Persentase area sekolah yang ditutupi oleh tanaman dan kebun.",
+          bg: "bg-green-50",
+        },
+      ];
+
+      let currentFactIndex = 0;
+      const factSliderContent = document.getElementById("fact-slider-content");
+
+      function renderFact(index) {
+        const fact = aboutFacts[index];
+
+        // Render elemen HTML untuk fakta saat ini
+        factSliderContent.innerHTML = `
+                <div class="p-6 md:p-8 rounded-lg ${fact.bg}">
+                    <div class="text-6xl ${fact.color} mb-4">
+                        <i class="${fact.icon}"></i>
+                    </div>
+                    <h4 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-2">${fact.value}</h4>
+                    <p class="text-xl font-semibold text-gray-700 mb-3">${fact.title}</p>
+                    <p class="text-gray-500 text-sm">${fact.detail}</p>
+                </div>
+            `;
+      }
+
+      function nextFact() {
+        // Animasi fade out
+        factSliderContent.style.opacity = "0";
+
+        setTimeout(() => {
+          // Ganti konten setelah fade out
+          currentFactIndex = (currentFactIndex + 1) % aboutFacts.length;
+          renderFact(currentFactIndex);
+
+          // Animasi fade in
+          factSliderContent.style.opacity = "1";
+        }, 700); // Durasi fade out (harus sama dengan transisi CSS)
+      }
+
+      // Inisialisasi: Tampilkan fakta pertama
+      if (factSliderContent) {
+        renderFact(currentFactIndex);
+        // Mulai slider fakta otomatis (bergeser setiap 4 detik)
+        setInterval(nextFact, 4000);
+      }
+
+      // JS untuk Image Slider Otomatis (Hero Section)
+      let currentImageIndex = 0;
+      const heroImages = document.querySelectorAll(".slider-container img");
+
+      function nextImage() {
+        heroImages[currentImageIndex].classList.remove("active");
+        currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+        heroImages[currentImageIndex].classList.add("active");
+      }
+
+      // Mulai slider otomatis Hero Section (bergeser setiap 4 detik)
+      setInterval(nextImage, 4000);
+
+      // JS untuk menu mobile
       document
         .getElementById("menu-toggle")
         .addEventListener("click", function () {
           const mobileMenu = document.getElementById("mobile-menu");
-          if (mobileMenu.classList.contains("hidden")) {
-            mobileMenu.classList.remove("hidden");
-          } else {
-            mobileMenu.classList.add("hidden");
-          }
+          mobileMenu.classList.toggle("hidden");
         });
-
-      // Skrip untuk slider
-      const sliderImages = document.querySelectorAll(".slider-image");
-      let currentImageIndex = 0;
-
-      function nextImage() {
-        sliderImages[currentImageIndex].classList.remove("active");
-        currentImageIndex = (currentImageIndex + 1) % sliderImages.length;
-        sliderImages[currentImageIndex].classList.add("active");
-      }
-
-      // Ganti gambar setiap 4 detik
-      setInterval(nextImage, 4000);
     </script>
   </body>
 </html>
