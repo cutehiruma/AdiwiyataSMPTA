@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kerusakan Ozon dan Pentingnya Mengurangi Jejak Karbon | Adiwiyata SMP Tunas Agro</title>
+    <title>
+      Berita: World Ozone Day 2025: Edukasi pentingnya menjaga lapisan ozon
+    </title>
     <!-- Memuat Tailwind CSS untuk styling modern -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Menggunakan font Inter dari Google Fonts -->
@@ -21,108 +23,333 @@
     <style>
       body {
         font-family: "Inter", sans-serif;
-        background-color: #f0fdf4;
+        background-color: #f8fafc; /* light slate-50 */
       }
-      /* Kustom CSS untuk menambah jarak vertikal antar paragraf.
-           Ini diperlukan karena class "prose" secara internal menimpa utility margin bawaan Tailwind. */
-        .prose p {
-            margin-bottom: 1.5rem; /* Menambahkan margin bawah yang lebih besar untuk paragraf (setara mb-6) */
-        }
+      .content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.75;
+      }
+      .content h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #047857; /* Emerald-700 */
+        border-left: 4px solid #10b981;
+        padding-left: 0.75rem;
+      }
+      .content ul {
+        margin-bottom: 1.5rem;
+        list-style: disc;
+        padding-left: 2rem;
+      }
+      /* Style kustom untuk menonjolkan quote/pesan utama */
+      .quote-box {
+        background-color: #fefcbf; /* Light yellow for warning/awareness */
+        border-left: 5px solid #fbbf24; /* Amber-400 */
+      }
     </style>
   </head>
-  <body class="text-gray-800">
+  <body class="text-gray-800 pt-16">
     <!-- Header & Navigasi -->
-    <header class="bg-green-700 text-white shadow-lg fixed top-0 w-full z-50">
+    <header
+      class="bg-white shadow-md fixed top-0 w-full z-50 transition duration-300"
+    >
       <div
-        class="container mx-auto px-4 py-4 flex justify-between items-center"
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
       >
-        <a href="index.html">
-          <img
-            src="img/logo adiwiyata SMPTA.png"
-            alt="Logo Adiwiyata SMP Tunas Agro"
-            class="h-12"
-          />
-        <nav class="hidden md:flex space-x-6">
+        <!-- Logo Sekolah (diarahkan ke index.html) -->
+        <a
+          href="index.html"
+          class="text-2xl font-extrabold text-emerald-700 tracking-wider"
+        >
+          <i class="fas fa-leaf mr-2"></i> Adiwiyata SMP TA
+        </a>
+        <!-- Navigasi Desktop -->
+        <nav class="hidden md:flex space-x-8 text-lg font-medium">
+          <a
+            href="index.html#about"
+            class="text-gray-600 hover:text-emerald-600 transition duration-300"
+            >Tentang</a
+          >
+          <a
+            href="index.html#program"
+            class="text-gray-600 hover:text-emerald-600 transition duration-300"
+            >Program</a
+          >
           <a
             href="index.html#berita"
-            class="hover:text-green-200 transition duration-300"
-            >Kembali ke Berita</a
+            class="text-emerald-600 font-semibold transition duration-300"
+            >Berita</a
+          >
+          <a
+            href="index.html#kontak"
+            class="text-gray-600 hover:text-emerald-600 transition duration-300"
+            >Kontak</a
           >
         </nav>
         <!-- Tombol untuk menu mobile -->
         <button
           id="menu-toggle"
-          class="md:hidden text-white focus:outline-none"
+          class="md:hidden text-gray-600 focus:outline-none"
         >
           <i class="fas fa-bars text-xl"></i>
         </button>
       </div>
       <!-- Menu Mobile -->
-      <div id="mobile-menu" class="hidden md:hidden bg-green-800 p-4">
+      <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
+        <a
+          href="index.html#about"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Tentang</a
+        >
+        <a
+          href="index.html#program"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Program</a
+        >
         <a
           href="index.html#berita"
-          class="block py-2 px-4 hover:bg-green-700 transition duration-300 rounded"
-          >Kembali ke Berita</a
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Berita</a
+        >
+        <a
+          href="index.html#kontak"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Kontak</a
         >
       </div>
     </header>
 
-    <!-- Konten Halaman Berita -->
-    <main class="pt-24 container mx-auto px-4 py-12">
-      <article class="bg-white p-8 rounded-xl shadow-lg max-w-4xl mx-auto">
-        <h1 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">
-          Kerusakan Ozon dan Pentingnya Mengurangi Jejak Karbon
-        </h1>
-        <p class="text-sm text-gray-500 mb-6">Diposting pada 10 Oktober 2025</p>
-        <img
-          src="img/Ozon_1.JPG"
-          alt="Gambar utama berita"
-          class="w-full h-auto rounded-lg mb-8"
-        />
-        <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed text-justify">
-          <p>
-            Salah satu penyebab kerusakan ozon adalah meningkatnya gas rumah kaca yang berasal dari aktivitas manusia. Misalnya, penggunaan kendaraan bermotor yang berlebihan, pembakaran sampah plastik, serta penggunaan energi listrik yang boros. Semua itu menambah “jejak karbon” atau jumlah emisi karbon yang kita hasilkan.
-          </p>
-          <p>
-            Mengurangi jejak karbon berarti berusaha mengurangi hal-hal yang bisa menambah polusi udara. Caranya bisa sederhana, seperti mematikan lampu saat tidak digunakan, berjalan kaki atau bersepeda untuk jarak dekat, membawa botol minum sendiri agar tidak membeli minuman kemasan plastik, dan menanam pohon.
-          </p>
-          <p>
-            SMP Tunas Agro sebagai sekolah Adiwiyata juga mengajak para siswanya untuk peduli terhadap isu ini. Beberapa kegiatan yang dilakukan antara lain workshop peringatan World Ozon Day bekerja sama dengan Agronomi PT Agro Indomas dan memberikan Reduce The Carbon Footprint Challenge kepada siswa siswi. Challenge sederhana seperti mematikan lampu jika tidak dipakai, menggunakan air dengan bijak, serta berrbagai kampanye hemat energi di kelas, diharapkan dapat mengajak para siswa untuk terbiasa menjaga lingkungan dan ikut serta mengurangi jejak karbon sejak dini.
-          </p>
-          <img
-          src="img/Ozon_2.jpg"
-          alt="Gambar utama berita"
-          class="w-full h-auto rounded-lg mb-8"
-        />
-          <p>
-            Ingat, bumi ini adalah rumah kita bersama. Kalau kita menjaga lapisan ozon dan mengurangi jejak karbon, berarti kita sudah ikut melindungi masa depan agar tetap hijau, bersih, dan sehat.
-          </p>
+    <!-- Konten Berita Utama -->
+    <main class="py-16">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <!-- Breadcrumb / Navigasi Cepat -->
+        <div class="text-sm text-gray-500 mb-6">
+          <a href="index.html#berita" class="hover:text-emerald-600 transition"
+            >Berita</a
+          >
+          /
+          <span class="font-medium text-gray-700">Hari Ozon Sedunia</span>
         </div>
-        <a
-          href="index.html"
-          class="inline-block mt-8 text-green-600 font-medium hover:underline"
-          ><i class="fas fa-arrow-left mr-1"></i> Kembali ke Beranda</a
+
+        <!-- Judul Artikel -->
+        <h1
+          class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight"
         >
-      </article>
+          World Ozone Day 2025: Edukasi Interaktif Menjaga 'Selimut Bumi' di SMP
+          Tunas Agro
+        </h1>
+
+        <!-- Metadata Artikel -->
+        <div class="flex items-center text-gray-500 text-sm mb-8 space-x-4">
+          <span
+            ><i class="fas fa-calendar-alt mr-1"></i> 20 September 2025</span
+          >
+          <span><i class="fas fa-user-circle mr-1"></i> Departemen Sains</span>
+          <span><i class="fas fa-tag mr-1"></i> Lingkungan Global, Sains</span>
+        </div>
+
+        <!-- Gambar Utama Artikel -->
+        <figure class="mb-10 rounded-xl overflow-hidden shadow-2xl">
+          <!-- Gambar Lapisan Ozon -->
+          <img
+            src="img/Ozon_1.JPG"
+            alt="Ilustrasi Lapisan Ozon melindungi Bumi"
+            class="w-full object-cover"
+          />
+          <figcaption
+            class="text-center text-sm text-gray-500 py-3 bg-white border-t border-gray-100"
+          >
+            Edukasi pentingnya menjaga lapisan ozon oleh Agronomy PT Agro
+            Indomas.
+          </figcaption>
+        </figure>
+
+        <!-- Isi Artikel -->
+        <article class="content text-lg text-gray-700">
+          <p>
+            Dalam rangka memperingati World Ozone Day yang jatuh setiap tanggal
+            16 September, SMP Tunas Agro menggelar serangkaian kegiatan edukatif
+            dan interaktif yang bertujuan untuk meningkatkan kesadaran siswa
+            tentang pentingnya menjaga lapisan ozon. Tema tahun ini, "Menjaga
+            Selimut Bumi untuk Generasi Mendatang", menekankan peran krusial
+            ozon dalam melindungi kehidupan di planet ini.
+          </p>
+
+          <p>
+            Kegiatan utama melibatkan Bagian Agronomy dan PT Agro Indomas. Siswa
+            SMP Tunas Agro diajak untuk memahami secara visual bagaimana zat-zat
+            perusak ozon (ODS) bekerja. Mereka juga mempelajari dampak langsung
+            penipisan ozon terhadap kesehatan manusia, khususnya peningkatan
+            risiko kanker kulit dan katarak.
+          </p>
+
+          <h3>Ancaman dan Upaya Perlindungan Ozon</h3>
+          <p>
+            Lapisan ozon berfungsi sebagai pelindung alami dari radiasi
+            ultraviolet (UV) berbahaya dari matahari. Penipisannya, yang
+            disebabkan oleh emisi bahan kimia seperti Klorofluorokarbon (CFC)
+            dan Hidroklorofluorokarbon (HCFC) yang banyak ditemukan pada alat
+            pendingin dan aerosol lama, menjadi perhatian global.
+          </p>
+          <div class="p-5 my-8 quote-box rounded-lg shadow-md">
+            <p class="italic text-gray-700 font-medium">
+              "Ozon mungkin jauh di stratosfer, tetapi dampaknya terasa di
+              setiap inchi kulit kita. Edukasi hari ini berfokus pada apa yang
+              bisa siswa lakukan, mulai dari memilih produk ramah ozon hingga
+              mendukung kebijakan lingkungan." - Pak Angga, Staff Agronomi, PT
+              Agro Indomas.
+            </p>
+          </div>
+
+          <h3>Aksi Nyata Siswa di Sekolah</h3>
+          <p>
+            Sebagai bagian dari program Adiwiyata, siswa didorong untuk
+            menerapkan langkah-langkah nyata untuk mengurangi jejak karbon dan
+            emisi ODS di lingkungan sekolah:
+          </p>
+          <ul>
+            <li>
+              Kampanye Ramah Lingkungan "Reduce the carbon footprint challenge":
+              Siswa melakukan aksi penghematan listrik, menjaga kebersihan, dan
+              penghematan air.
+            </li>
+            <li>
+              Pameran hasil: Siswa mendokumentasikan aksi mereka dan membuat
+              kolase foto yang dipajang di koridor sekolah.
+            </li>
+          </ul>
+
+          <p>
+            Melalui peringatan World Ozone Day ini, SMP Tunas Agro tidak hanya
+            memberikan pengetahuan akademis tetapi juga membekali siswa dengan
+            kesadaran global untuk menjadi generasi yang bertanggung jawab dan
+            proaktif dalam menjaga kesehatan planet mereka.
+          </p>
+        </article>
+
+        <!-- Bagian Aksi (Berbagi) -->
+        <div
+          class="mt-12 pt-6 border-t border-gray-200 flex justify-between items-center"
+        >
+          <a
+            href="index.html#berita"
+            class="text-emerald-600 font-semibold hover:underline transition"
+          >
+            <i class="fas fa-arrow-left mr-2"></i> Kembali ke Daftar Berita
+          </a>
+          <div class="flex items-center space-x-3">
+            <span class="text-gray-600 font-medium">Bagikan:</span>
+            <button class="text-gray-400 hover:text-emerald-600 transition">
+              <i class="fab fa-facebook-f text-lg"></i>
+            </button>
+            <button class="text-gray-400 hover:text-emerald-600 transition">
+              <i class="fab fa-twitter text-lg"></i>
+            </button>
+            <button class="text-gray-400 hover:text-emerald-600 transition">
+              <i class="fab fa-whatsapp text-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-green-800 text-white py-8 text-center mt-12">
-      <p>&copy; 2024 Adiwiyata SMP Tunas Agro. Hak Cipta Dilindungi.</p>
-      <p class="mt-2 text-sm">Dibuat dengan semangat peduli lingkungan.</p>
+    <!-- Footer (Sama dengan Halaman Utama) -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Kolom 1: Logo & Deskripsi -->
+        <div>
+          <h3 class="text-2xl font-extrabold text-emerald-400 mb-4">
+            <i class="fas fa-leaf mr-2"></i> SMP TA Adiwiyata
+          </h3>
+          <p class="text-gray-400 text-sm">
+            Pusat pendidikan yang berkomitmen penuh pada pelestarian lingkungan
+            dan budaya hijau.
+          </p>
+        </div>
+
+        <!-- Kolom 2: Navigasi Cepat -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Navigasi</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a
+                href="index.html#about"
+                class="text-gray-400 hover:text-emerald-400 transition"
+                >Tentang Kami</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#program"
+                class="text-gray-400 hover:text-emerald-400 transition"
+                >Program Unggulan</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#berita"
+                class="text-gray-400 hover:text-emerald-400 transition"
+                >Berita Terbaru</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: Kontak -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Hubungi</h4>
+          <p class="text-gray-400 text-sm">
+            Email: adiwiyata@smptunasagro.sch.id
+          </p>
+          <p class="text-gray-400 text-sm mt-1">Telp: (021) 123-4567</p>
+          <p class="text-gray-400 text-sm mt-1">
+            Alamat: Jl. Sekolah Hijau No. 1
+          </p>
+        </div>
+
+        <!-- Kolom 4: Sosial Media -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Ikuti Kami</h4>
+          <div class="flex space-x-4">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center border-t border-gray-700 pt-6 mt-8">
+        <p class="text-gray-500 text-sm">
+          &copy; 2024 Adiwiyata SMP Tunas Agro. All rights reserved.
+        </p>
+      </div>
     </footer>
 
-    <!-- Skrip JavaScript untuk menu mobile -->
+    <!-- Skrip JavaScript untuk Menu Mobile -->
     <script>
       document
         .getElementById("menu-toggle")
         .addEventListener("click", function () {
           const mobileMenu = document.getElementById("mobile-menu");
-          if (mobileMenu.classList.contains("hidden")) {
-            mobileMenu.classList.remove("hidden");
-          } else {
-            mobileMenu.classList.add("hidden");
-          }
+          mobileMenu.classList.toggle("hidden");
         });
     </script>
   </body>
