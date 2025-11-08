@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arsip Berita - Adiwiyata SMP TA</title>
+    <!-- Memuat Tailwind CSS untuk styling modern -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Menggunakan font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome untuk ikon-ikon yang menarik -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc; /* light slate-50 */
+      }
+      .news-card {
+        transition: all 0.5s ease;
+      }
+      .news-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(4, 120, 87, 0.15); /* Shadow Emerald */
+      }
+    </style>
+  </head>
+  <body class="text-gray-800 pt-16">
+    <!-- Header & Navigasi -->
+    <header
+      class="bg-white shadow-md fixed top-0 w-full z-50 transition duration-300"
+    >
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <!-- Logo Sekolah (diarahkan ke index.html) -->
+        <a
+          href="index.html"
+          class="text-2xl font-extrabold text-emerald-700 tracking-wider"
+        >
+          <i class="fas fa-leaf mr-2"></i> Adiwiyata SMP TA
+        </a>
+        <!-- Navigasi Desktop -->
+        <nav class="hidden md:flex space-x-8 text-lg font-medium">
+          <a
+            href="index.html#about"
+            class="text-gray-600 hover:text-emerald-600 transition duration-300"
+            >Tentang</a
+          >
+          <a
+            href="index.html#program"
+            class="text-gray-600 hover:text-emerald-600 transition duration-300"
+            >Program</a
+          >
+          <a
+            href="index.html#berita"
+            class="text-emerald-600 font-semibold transition duration-300"
+            >Berita</a
+          >
+          <a
+            href="index.html#kontak"
+            class="text-gray-600 hover:text-emerald-600 transition duration-300"
+            >Kontak</a
+          >
+        </nav>
+        <!-- Tombol untuk menu mobile -->
+        <button
+          id="menu-toggle"
+          class="md:hidden text-gray-600 focus:outline-none"
+        >
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      <!-- Menu Mobile -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
+        <a
+          href="index.html#about"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Tentang</a
+        >
+        <a
+          href="index.html#program"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Program</a
+        >
+        <a
+          href="index.html#berita"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Berita</a
+        >
+        <a
+          href="index.html#kontak"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Kontak</a
+        >
+      </div>
+    </header>
+
+    <!-- Konten Utama - Arsip Berita -->
+    <main class="py-16">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <header class="text-center mb-12">
+          <h1
+            class="text-5xl font-extrabold text-gray-900 mb-4 border-b-4 border-emerald-500 inline-block pb-1"
+          >
+            Arsip Berita Adiwiyata
+          </h1>
+          <p class="text-xl text-gray-600 mt-3">
+            Kumpulan informasi terbaru tentang kegiatan dan inovasi lingkungan
+            di SMP Tunas Agro.
+          </p>
+        </header>
+
+        <!-- Grid Berita -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <!-- Berita 4: World Ozone Day 
+          <div
+            class="news-card bg-white rounded-xl shadow-lg p-6 flex flex-col"
+          >
+            <img
+              class="w-full h-48 object-cover rounded-t-lg mb-4"
+              src="https://placehold.co/600x400/4B77BE/FFFFFF?text=Ozone+Day"
+              alt="World Ozone Day"
+            />
+            <span class="text-xs font-semibold text-emerald-600 uppercase mb-2"
+              >Lingkungan Global</span
+            >
+            <h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+              World Ozone Day 2025: Edukasi pentingnya menjaga lapisan ozon
+            </h2>
+            <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+              Edukasi interaktif kepada siswa tentang pentingnya Lapisan Ozon
+              sebagai "Selimut Bumi" dan upaya nyata konservasi di sekolah.
+            </p>
+            <div
+              class="mt-auto pt-3 border-t border-gray-100 flex justify-between items-center"
+            >
+              <span class="text-gray-500 text-xs"
+                ><i class="fas fa-calendar-alt mr-1"></i> 16 Sep 2025</span
+              >
+              <a
+                href="berita_4.html"
+                class="text-emerald-600 font-medium text-sm hover:underline flex items-center"
+              >
+                Baca Selengkapnya
+                <i class="fas fa-arrow-right ml-1 text-xs"></i>
+              </a>
+            </div>
+          </div> -->
+
+          <!-- Berita 3: Panen Air Hujan -->
+          <div
+            class="news-card bg-white rounded-xl shadow-lg p-6 flex flex-col"
+          >
+            <img
+              class="w-full h-48 object-cover rounded-t-lg mb-4"
+              src="img/Berita-3.jpeg"
+              alt="Panen Air Hujan"
+            />
+            <span class="text-xs font-semibold text-emerald-600 uppercase mb-2"
+              >Konservasi Air</span
+            >
+            <h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+              Inovasi Panen Air Hujan Mulai Beroperasi: Bukti Nyata Konservasi
+              Air
+            </h2>
+            <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+              Sistem PAH buatan siswa berhasil diresmikan, membantu sekolah
+              mengurangi 30% konsumsi air bersih untuk penyiraman.
+            </p>
+            <div
+              class="mt-auto pt-3 border-t border-gray-100 flex justify-between items-center"
+            >
+              <span class="text-gray-500 text-xs"
+                ><i class="fas fa-calendar-alt mr-1"></i> 01 Sep 2025</span
+              >
+              <a
+                href="berita_3.html"
+                class="text-emerald-600 font-medium text-sm hover:underline flex items-center"
+              >
+                Baca Selengkapnya
+                <i class="fas fa-arrow-right ml-1 text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Berita 2 (Placeholder) -->
+          <div
+            class="news-card bg-white rounded-xl shadow-lg p-6 flex flex-col"
+          >
+            <img
+              class="w-full h-48 object-cover rounded-t-lg mb-4"
+              src="img/Ozon_1.JPG"
+              alt="Workshop Pengomposan"
+            />
+            <span class="text-xs font-semibold text-orange-500 uppercase mb-2"
+              >Pengolahan Sampah</span
+            >
+            <h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+              World Ozone Day 2025: Edukasi Interaktif Menjaga 'Selimut Bumi' di
+              SMP Tunas Agro
+            </h2>
+            <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+              Dalam rangka memperingati World Ozone Day yang jatuh setiap
+              tanggal 16 September, SMP Tunas Agro menggelar serangkaian
+              kegiatan edukatif dan interaktif yang bertujuan untuk meningkatkan
+              kesadaran siswa tentang pentingnya menjaga lapisan ozon.
+            </p>
+            <div
+              class="mt-auto pt-3 border-t border-gray-100 flex justify-between items-center"
+            >
+              <span class="text-gray-500 text-xs"
+                ><i class="fas fa-calendar-alt mr-1"></i> 10 Agu 2025</span
+              >
+              <a
+                href="berita_2.html"
+                class="text-emerald-600 font-medium text-sm hover:underline flex items-center"
+              >
+                Baca Selengkapnya
+                <i class="fas fa-arrow-right ml-1 text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Berita 1 (Placeholder) -->
+          <div
+            class="news-card bg-white rounded-xl shadow-lg p-6 flex flex-col"
+          >
+            <img
+              class="w-full h-48 object-cover rounded-t-lg mb-4"
+              src="img/WCDI_1.jpeg"
+              alt="Inisiatif Sekolah Hijau"
+            />
+            <span class="text-xs font-semibold text-green-700 uppercase mb-2"
+              >Inisiatif Sekolah</span
+            >
+            <h2 class="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+              Peringatan World Clean Up Day: Ratusan Siswa SMP Tunas Agro Gelar
+              Aksi Bersih
+            </h2>
+            <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+              Dalam semangat gerakan global World Clean Up Day (WCD), SMP Tunas
+              Agro menunjukkan komitmennya terhadap kelestarian lingkungan
+              dengan mengadakan aksi bersih-bersih besar-besaran.
+            </p>
+            <div
+              class="mt-auto pt-3 border-t border-gray-100 flex justify-between items-center"
+            >
+              <span class="text-gray-500 text-xs"
+                ><i class="fas fa-calendar-alt mr-1"></i> 20 Sep 2025</span
+              >
+              <a
+                href="berita_1.html"
+                class="text-emerald-600 font-medium text-sm hover:underline flex items-center"
+              >
+                Baca Selengkapnya
+                <i class="fas fa-arrow-right ml-1 text-xs"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Tambahkan kartu berita lainnya di sini -->
+        </div>
+        <!-- Akhir Grid Berita -->
+
+        <!-- Tombol Kembali ke Beranda -->
+        <div class="text-center mt-16">
+          <a
+            href="index.html#berita"
+            class="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-emerald-600 hover:bg-emerald-700 transition duration-300"
+          >
+            <i class="fas fa-home mr-2"></i> Kembali ke Halaman Utama
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer (Sama dengan Halaman Utama) -->
+    <footer class="bg-gray-800 text-white py-12 mt-16">
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Kolom 1: Logo & Deskripsi -->
+        <div>
+          <h3 class="text-2xl font-extrabold text-emerald-400 mb-4">
+            <i class="fas fa-leaf mr-2"></i> SMP TA Adiwiyata
+          </h3>
+          <p class="text-gray-400 text-sm">
+            Pusat pendidikan yang berkomitmen penuh pada pelestarian lingkungan
+            dan budaya hijau.
+          </p>
+        </div>
+
+        <!-- Kolom 2: Navigasi Cepat -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Navigasi</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a
+                href="index.html#about"
+                class="text-gray-400 hover:text-emerald-400 transition"
+                >Tentang Kami</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#program"
+                class="text-gray-400 hover:text-emerald-400 transition"
+                >Program Unggulan</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#berita"
+                class="text-gray-400 hover:text-emerald-400 transition"
+                >Berita Terbaru</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: Kontak -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Hubungi</h4>
+          <p class="text-gray-400 text-sm">Email: kontak.smpta@gmail.com</p>
+          <p class="text-gray-400 text-sm mt-1">Telp: 0821-5515-6080</p>
+          <p class="text-gray-400 text-sm mt-1">
+            Alamat: PT Agro Indomas, Jl. Jendral Sudirman km. 75, Sampit -
+            Pangkalan Bun
+          </p>
+        </div>
+
+        <!-- Kolom 4: Sosial Media -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Ikuti Kami</h4>
+          <div class="flex space-x-4">
+            <a
+              href="www.instagram.com/smptunasagro_seruyan"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="www.youtube.com/@timsmpta9741"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-youtube"></i
+            ></a>
+      </div>
+      <div class="text-center border-t border-gray-700 pt-6 mt-8">
+        <p class="text-gray-500 text-sm">
+          &copy; 2024 Adiwiyata SMP Tunas Agro. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Skrip JavaScript untuk Menu Mobile -->
+    <script>
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+  </body>
+</html>
