@@ -51,40 +51,6 @@
       section {
         scroll-margin-top: 5rem;
       }
-/* Container Carousel: Menggunakan Flexbox untuk pergeseran horizontal */
-        .carousel-container {
-            overflow-x: scroll; /* Izinkan scrolling, tapi kita akan mengontrolnya dengan JS */
-            scroll-snap-type: x mandatory;
-            /* Sembunyikan Scrollbar */
-            -ms-overflow-style: none; /* IE and Edge */
-            scrollbar-width: none; /* Firefox */
-        }
-        .carousel-container::-webkit-scrollbar {
-            display: none;
-        }
-
-        /* Item Carousel: Menentukan lebar kartu */
-        .carousel-item {
-            scroll-snap-align: start;
-            /* Pada layar kecil (Mobile), item mengambil lebar penuh (100%) */
-            flex: 0 0 100%; 
-            padding: 0.75rem; 
-        }
-
-        /* Pada layar Medium (md), item mengambil 1/3 lebar container */
-        @media (min-width: 768px) {
-            .carousel-item {
-                flex: 0 0 calc(100% / 3); /* 3 kartu per tampilan */
-            }
-        }
-        
-        /* Kelas untuk membatasi tinggi teks pada kartu */
-        .text-clamp-3 {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
     </style>
   </head>
   <body class="text-gray-800">
@@ -311,111 +277,113 @@
       </div>
     </section>
 
+    <!-- 4. Berita Terbaru Section -->
+    <section id="berita" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <span
+          class="text-sm font-semibold uppercase text-emerald-600 mb-2 block text-center"
+          >Dokumentasi</span
+        >
+        <h2
+          class="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center"
+        >
+          Berita dan Kegiatan Terbaru
+        </h2>
 
-    <!-- Berita Terbaru Section (Carousel) -->
-        <section class="mb-12 bg-white p-6 md:p-8 rounded-xl shadow-xl relative">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-teal-500 pb-2 flex items-center">
-              <svg class="w-6 h-6 inline-block mr-2 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                Berita Terbaru
-            </h2>
-
-            <!-- Area Carousel -->
-        <div class="relative -mx-3"> <!-- Margin negatif untuk mengkompensasi padding item -->
-            <!-- Container Carousel -->
-            <div id="carousel-container" class="carousel-container flex transition-all duration-300 ease-in-out">
-                
-                <!-- Berita Card 1: Pirolisis Plastik (10 November 2025) -->
-                <div class="carousel-item">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:shadow-xl transition duration-300 h-full">
-                        <img class="w-full h-40 object-cover" src="img/Berita_4.jpeg" alt="Inovasi Pirolisis">
-                        <div class="p-4">
-                            <p class="text-xs text-gray-500 mb-2 font-medium">22 November 2025</p>
-                            <h3 class="text-base font-bold text-gray-800 mb-2 hover:text-teal-600 transition duration-300">
-                                Workshop Pembuatan Bahan Bakar Ramah Lingkungan bersama DLHK Kotawaringin Timur
-                            </h3>
-                            <p class="text-gray-600 text-sm mb-3 text-clamp-3">
-                                Sekolah sukses menyelenggarakan workshop inovatif berjudul "Pembuatan Bahan Bakar Ramah Lingkungan"
-                            </p>
-                            <a href="Berita_4.html" class="text-teal-600 font-semibold text-sm hover:underline flex items-center">
-                                Baca Selengkapnya
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Berita Card 2: konservasi air (10 Oktober 2025) -->
-                <div class="carousel-item">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:shadow-xl transition duration-300 h-full">
-                        <img class="w-full h-40 object-cover" src="img/Berita-3.jpeg" alt="konservasi air">
-                        <div class="p-4">
-                            <p class="text-xs text-gray-500 mb-2 font-medium">10 November 2025</p>
-                            <h3 class="text-base font-bold text-gray-800 mb-2 hover:text-teal-600 transition duration-300">
-                                Inovasi Panen Air Hujan Mulai Beroperasi: Bukti Nyata Konservasi Air di Sekolah
-                            </h3>
-                            <p class="text-gray-600 text-sm mb-3 text-clamp-3">
-                                Mengurangi jejak karbon berarti berusaha mengurangi hal-hal yang bisa menambah polusi udara. Caranya bisa sederhana, mulai dari memilih transportasi hingga pengelolaan limbah rumah tangga.
-                            </p>
-                            <a href="Berita_3.html" class="text-teal-600 font-semibold text-sm hover:underline flex items-center">Baca Selengkapnya
-                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Berita Card 3: Kemitraan Biofuel (25 September 2025) -->
-                <div class="carousel-item">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:shadow-xl transition duration-300 h-full">
-                        <img class="w-full h-40 object-cover" src="img/Ozon_1.JPG" alt="world ozone day">
-                        <div class="p-4">
-                            <p class="text-xs text-gray-500 mb-2 font-medium">20 September 2025</p>
-                            <h3 class="text-base font-bold text-gray-800 mb-2 hover:text-teal-600 transition duration-300">
-                                World Ozone Day 2025: Edukasi Interaktif Menjaga 'Selimut Bumi' di SMP Tunas Agro
-                            </h3>
-                            <p class="text-gray-600 text-sm mb-3 text-clamp-3">
-                                Edukasi pentingnya menjaga lapisan ozon oleh Agronomy PT Agro Indomas.
-                            <a href="Berita_2.html" class="text-teal-600 font-semibold text-sm hover:underline flex items-center">
-                                Baca Selengkapnya
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Berita Card 4: world cleaup day -->
-                <div class="carousel-item">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:shadow-xl transition duration-300 h-full">
-                        <img class="w-full h-40 object-cover" src="img/WCDI_1.jpeg" alt="world Cleanup day">
-                        <div class="p-4">
-                            <p class="text-xs text-gray-500 mb-2 font-medium">20 September 2025</p>
-                            <h3 class="text-base font-bold text-gray-800 mb-2 hover:text-teal-600 transition duration-300">
-                                Peringatan World Clean Up Day: Ratusan Siswa SMP Tunas Agro Gelar Aksi Bersih
-                            </h3>
-                            <p class="text-gray-600 text-sm mb-3 text-clamp-3">
-                                Dalam semangat gerakan global World Clean Up Day (WCD), SMP Tunas
-            Agro menunjukkan komitmennya terhadap kelestarian lingkungan dengan
-            mengadakan aksi bersih-bersih besar-besaran.
-                            </p>
-                            <a href="Berita_1.html" class="text-teal-600 font-semibold text-sm hover:underline flex items-center">
-                                Baca Selengkapnya
-                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Kartu Berita 1 (Mengarah ke berita-1.html) -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:shadow-xl transition duration-300"
+          >
+            <img
+              class="w-full h-48 object-cover"
+              src="img/WCDI_1.jpeg"
+              alt="Peringatan World Clean Up Day"
+            />
+            <div class="p-5">
+              <p class="text-xs text-gray-500 mb-2">10 Okt 2025</p>
+              <h3
+                class="text-lg font-semibold text-gray-800 mb-3 hover:text-emerald-600 transition duration-300"
+              >
+                Peringatan World Clean Up Day: Ratusan Siswa SMP Tunas Agro
+                Gelar Aksi Bersih
+              </h3>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                Dalam semangat gerakan global World Clean Up Day, SMP Tunas Agro
+                mengadakan aksi bersih-bersih lingkungan sekolah dan area
+                sekitarnya...
+              </p>
+              <a
+                href="Berita_1.html"
+                class="text-emerald-600 font-medium text-sm hover:underline"
+                >Baca Selengkapnya
+                <i class="fas fa-arrow-right ml-1 text-xs"></i
+              ></a>
             </div>
+          </div>
 
-            <!-- Tombol Navigasi -->
-            <button id="prev-button" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-xl hover:bg-gray-100 transition duration-150 z-10 -ml-8 focus:outline-none disabled:opacity-50 disabled:shadow-none hidden md:block">
-                <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-            </button>
-            <button id="next-button" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white p-3 rounded-full shadow-xl hover:bg-gray-100 transition duration-150 z-10 -mr-8 focus:outline-none disabled:opacity-50 disabled:shadow-none hidden md:block">
-                <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-            </button>
+          <!-- Kartu Berita 2 -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:shadow-xl transition duration-300"
+          >
+            <img
+              class="w-full h-48 object-cover"
+              src="img/Ozon_1.JPG"
+              alt="Panen Air Hujan"
+            />
+            <div class="p-5">
+              <p class="text-xs text-gray-500 mb-2">10 Oktober 2025</p>
+              <h3
+                class="text-lg font-semibold text-gray-800 mb-3 hover:text-emerald-600 transition duration-300"
+              >
+                World Ozone Day 2025: Edukasi Interaktif Menjaga 'Selimut Bumi'
+                di SMP Tunas Agro
+              </h3>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                Mengurangi jejak karbon berarti berusaha mengurangi hal-hal yang
+                bisa menambah polusi udara. Caranya bisa sederhana.
+              </p>
+              <a
+                href="Berita_2.html"
+                class="text-emerald-600 font-medium text-sm hover:underline"
+                >Baca Selengkapnya
+                <i class="fas fa-arrow-right ml-1 text-xs"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Kartu Berita 3 -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transform hover:shadow-xl transition duration-300"
+          >
+            <img
+              class="w-full h-48 object-cover"
+              src="img/Berita-3.jpeg"
+              alt="Bank Sampah Digital"
+            />
+            <div class="p-5">
+              <p class="text-xs text-gray-500 mb-2">20 Agu 2025</p>
+              <h3
+                class="text-lg font-semibold text-gray-800 mb-3 hover:text-emerald-600 transition duration-300"
+              >
+                Inovasi Panen Air Hujan Mulai Beroperasi: Bukti Nyata Konservasi
+                Air di Sekolah
+              </h3>
+              <p class="text-gray-600 text-sm mb-4 line-clamp-3">
+                SMP Tunas Agro dengan bangga mengumumkan beroperasinya sistem
+                Panen Air Hujan (PAH) yang merupakan proyek inovasi dari tim
+                konservasi air Adiwiyata.
+              </p>
+              <a
+                href="Berita_3.html"
+                class="text-emerald-600 font-medium text-sm hover:underline"
+                >Baca Selengkapnya
+                <i class="fas fa-arrow-right ml-1 text-xs"></i
+              ></a>
+            </div>
+          </div>
         </div>
-        </section>
 
-    </main>
         <div class="text-center mt-12">
           <a
             href="Semua_Berita.html"
@@ -673,132 +641,6 @@
           mobileMenu.classList.toggle("hidden");
         });
 
-      // DOM Elements
-        const carouselContainer = document.getElementById('carousel-container');
-        const prevButton = document.getElementById('prev-button');
-        const nextButton = document.getElementById('next-button');
-        const dotsContainer = document.getElementById('dots-container');
-        const items = document.querySelectorAll('.carousel-item');
-
-        const totalItems = items.length;
-        // Tentukan jumlah kartu yang ditampilkan per slide (1 untuk mobile, 3 untuk desktop)
-        let itemsPerView = 3; 
-
-        // Current scroll position index (0, 1, 2, ...)
-        let currentScrollIndex = 0; 
-        
-        /**
-         * Menghitung itemsPerView berdasarkan lebar layar.
-         * Ini penting agar JS tahu berapa banyak kartu yang harus digeser (1 atau 3).
-         */
-        function calculateItemsPerView() {
-            // Lebar layar md: 768px
-            itemsPerView = window.innerWidth >= 768 ? 3 : 1; 
-        }
-
-        /**
-         * Menghitung total geseran yang mungkin.
-         * Jika total 4 item dan per tampilan 3, maka hanya ada 2 posisi geser (0, 1)
-         */
-        function getMaxScrollIndex() {
-             // Math.ceil(4 / 3) = 2. Geseran dari 1 ke 4 dihitung sebagai 2 posisi.
-             // Untuk 4 item, 3 per tampilan, kita hanya bisa geser 1 kali (dari item 1-3 ke 2-4).
-            if (itemsPerView === 3) {
-                 // Posisi 0 (item 1, 2, 3), Posisi 1 (item 2, 3, 4)
-                return totalItems - itemsPerView; 
-            } else {
-                // Untuk mobile (1 per tampilan): 4 item, 1 per tampilan -> 4 posisi (0, 1, 2, 3)
-                return totalItems - itemsPerView; 
-            }
-        }
-
-        /**
-         * Menggeser carousel ke posisi index yang ditentukan.
-         */
-        function scrollToSlide(index) {
-            currentScrollIndex = Math.min(Math.max(0, index), getMaxScrollIndex());
-
-            // Lebar satu item. Semua item (kecuali pada mobile) memiliki lebar yang sama.
-            const itemWidth = items[0].offsetWidth; 
-            // Posisi scroll = (Item yang dilewati) * (Lebar 1 Item)
-            // Dalam mode 3-kartu, setiap geseran hanya maju 1 item.
-            const scrollPosition = currentScrollIndex * itemWidth; 
-
-            carouselContainer.scrollTo({
-                left: scrollPosition,
-                behavior: 'smooth'
-            });
-            
-            updateNavigationButtons();
-            updateDots();
-        }
-
-        /**
-         * Fungsi untuk memperbarui status tombol navigasi (disabled/enabled).
-         */
-        function updateNavigationButtons() {
-            const maxIndex = getMaxScrollIndex();
-            prevButton.disabled = currentScrollIndex === 0;
-            nextButton.disabled = currentScrollIndex >= maxIndex;
-        }
-        
-        /**
-         * Fungsi untuk membuat dan memperbarui indikator titik (dots) untuk mobile.
-         */
-        function createAndUpdateDots() {
-            dotsContainer.innerHTML = ''; // Bersihkan dots lama
-            if (window.innerWidth < 768) { // Tampilkan dots hanya di mobile
-                for (let i = 0; i < totalItems; i++) {
-                    const dot = document.createElement('button');
-                    dot.className = `w-3 h-3 mx-1 rounded-full transition duration-300 focus:outline-none ${
-                        i === currentScrollIndex ? 'bg-teal-500' : 'bg-gray-300 hover:bg-gray-400'
-                    }`;
-                    dot.setAttribute('data-index', i);
-                    dot.addEventListener('click', () => scrollToSlide(i));
-                    dotsContainer.appendChild(dot);
-                }
-            }
-        }
-
-        /**
-         * Fungsi untuk memperbarui tampilan dots (titik).
-         */
-        function updateDots() {
-            if (window.innerWidth < 768) {
-                const dots = dotsContainer.querySelectorAll('button');
-                dots.forEach((dot, index) => {
-                    dot.classList.remove('bg-teal-500', 'bg-gray-300');
-                    dot.classList.add(index === currentScrollIndex ? 'bg-teal-500' : 'bg-gray-300');
-                });
-            }
-        }
-
-
-        // Event Listeners
-        nextButton.addEventListener('click', () => {
-            scrollToSlide(currentScrollIndex + 1);
-        });
-        
-        prevButton.addEventListener('click', () => {
-            scrollToSlide(currentScrollIndex - 1);
-        });
-
-        // Initialization and Resize Handling
-        function initializeCarousel() {
-            calculateItemsPerView();
-            // Atur ulang scroll index jika berubah dari mobile ke desktop atau sebaliknya
-            currentScrollIndex = 0; 
-            scrollToSlide(currentScrollIndex);
-            createAndUpdateDots(); 
-        }
-
-        window.onload = initializeCarousel;
-        
-        window.addEventListener('resize', () => {
-             // Debounce resize untuk performa lebih baik (opsional, tapi baik)
-            clearTimeout(window.resizeTimer);
-            window.resizeTimer = setTimeout(initializeCarousel, 150);
-        });
       // =========================================================================
       // LOGIKA GOOGLE APPS SCRIPT FORM SUBMISSION
       // =========================================================================
