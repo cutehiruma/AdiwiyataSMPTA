@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Berita: SMP Tunas Agro Perkuat Komitmen Sekolah Hijau 
+    </title>
+    <!-- Memuat Tailwind CSS untuk styling modern -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Menggunakan font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome untuk ikon-ikon yang menarik -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: #f8fafc; /* light slate-50 */
+      }
+      .content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.75;
+      }
+      .content h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        color: #047857; /* Emerald-700 */
+        border-left: 4px solid #10b981;
+        padding-left: 0.75rem;
+      }
+      .content ul {
+        margin-bottom: 1.5rem;
+        list-style: disc;
+        padding-left: 2rem;
+      }
+      /* Style kustom untuk menonjolkan data statistik */
+      .stat-box {
+        background-color: #f0fff4; /* Mint green light */
+        border-left: 5px solid #34d399; /* Emerald-400 */
+      }
+    </style>
+  </head>
+  <body class="text-gray-800 pt-16">
+    <!-- Header & Navigasi -->
+    <header
+      class="bg-white shadow-md fixed top-0 w-full z-50 transition duration-300"
+    >
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <!-- Logo Sekolah (diarahkan ke index.html) -->
+        <a
+          href="index.html"
+          class="text-2xl font-extrabold text-emerald-700 tracking-wider"
+        >
+          <i class="fas fa-leaf mr-2"></i> Adiwiyata SMP TA
+        </a>
+        <!-- Navigasi Desktop -->
+        <nav class="hidden md:flex space-x-8 text-lg font-medium">
+          <a
+            href="index.html#about"
+            class="text-gray-600 hover:text-emerald-600 transition duration-300"
+            >Tentang</a
+          >
+          <a
+            href="index.html#program"
+            class="text-gray-600 hover:text-emerald-600 transition duration-300"
+            >Program</a
+          >
+          <a
+            href="index.html#berita"
+            class="text-emerald-600 font-semibold transition duration-300"
+            >Berita</a
+          >
+          <a
+            href="index.html#kontak"
+            class="text-gray-600 hover:text-emerald-600 transition duration-300"
+            >Kontak</a
+          >
+        </nav>
+        <!-- Tombol untuk menu mobile -->
+        <button
+          id="menu-toggle"
+          class="md:hidden text-gray-600 focus:outline-none"
+        >
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      <!-- Menu Mobile -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white shadow-inner">
+        <a
+          href="index.html#about"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Tentang</a
+        >
+        <a
+          href="index.html#program"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Program</a
+        >
+        <a
+          href="index.html#berita"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Berita</a
+        >
+        <a
+          href="index.html#kontak"
+          class="block py-3 px-4 text-gray-700 hover:bg-gray-100 transition duration-300"
+          >Kontak</a
+        >
+      </div>
+    </header>
+
+    <!-- Konten Berita Utama -->
+    <main class="py-16">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <!-- Breadcrumb / Navigasi Cepat -->
+        <div class="text-sm text-gray-500 mb-6">
+          <a href="Semua_Berita.html" class="hover:text-emerald-600 transition"
+            >Berita</a
+          >
+          /
+          <span class="font-medium text-gray-700"
+            >SMP Tunas Agro Perkuat Komitmen Sekolah Hijau</span
+          >
+        </div>
+
+        <!-- Judul Artikel -->
+        <h1
+          class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 leading-tight"
+        >
+          SMP Tunas Agro Perkuat Komitmen Sekolah Hijau Melalui Workshop Penyusunan Program Sekolah Tahun 2026
+        </h1>
+
+        <!-- Metadata Artikel -->
+        <div class="flex items-center text-gray-500 text-sm mb-8 space-x-4">
+          <span><i class="fas fa-calendar-alt mr-1"></i> 31 Januari 2026</span>
+          <span
+            ><i class="fas fa-user-circle mr-1"></i> Sekertaris Adiwiyata</span
+          >
+          <span
+            ><i class="fas fa-tag mr-1"></i> Sekolah Hijau, Program
+            Sekolah</span
+          >
+        </div>
+
+        <!-- Gambar Utama Artikel -->
+        <figure class="mb-10 rounded-xl overflow-hidden shadow-2xl">
+          <!-- Ganti dengan URL gambar asli sistem PAH Anda -->
+          <img
+            src="img/Berita-6.JPG"
+            alt="Foto workshop program sekolah"
+            class="w-full object-cover"
+          />
+          <figcaption
+            class="text-center text-sm text-gray-500 py-3 bg-white border-t border-gray-100"
+          >
+            Workshop Penyusunan Program Sekolah di SMP Tunas Agro
+          </figcaption>
+        </figure>
+
+        <!-- Isi Artikel -->
+        <article class="content text-lg text-gray-700 text-justify">
+          <p>
+            Menegaskan komitmennya terhadap pelestarian lingkungan, SMP Tunas Agro sukses menggelar rapat penyusunan program sekolah tahunan pada tanggal 26-27 Januari 2026. Agenda intensif yang berlangsung selama dua hari ini memfokuskan seluruh arah kebijakan sekolah pada penguatan aspek Sekolah Hijau (Green School) guna mendukung penuh pencapaian target Program Adiwiyata.
+          </p>
+
+          <p>
+            Rapat koordinasi yang dihadiri oleh Jajaran pengurus Yayasan Agro Harapan Lestari dan dewan guru ini bertujuan untuk menyinkronkan kurikulum pendidikan, penyusunan anggaran dana sekolah dengan praktik keberlanjutan lingkungan hidup di area sekolah. SMP Tunas Agro memiliki target untuk menjadi Sekolah Adiwiyata tingkat Nasional di tahun 2026 ini.
+          </p>
+
+          <div class="p-5 my-8 stat-box rounded-lg shadow-md">
+            <h4
+              class="text-xl font-bold text-emerald-700 mb-2 flex items-center"
+            >
+              <i class="fas fa-chart-line mr-2"></i> Sinergi Strategis: Menyelaraskan Visi Sekolah dan Yayasan
+            </h4>
+            <p class="text-gray-700">
+              Salah satu poin utama dalam agenda tahun ini adalah pelaksanaan workshop penyusunan program yang dirancang khusus untuk menyingkronkan target internal sekolah dengan visi besar pihak Yayasan. Langkah sinkronisasi ini dianggap krusial agar seluruh inisiatif lingkungan yang dirancang SMP Tunas Agro mendapatkan dukungan sumber daya dan kebijakan yang sejalan dengan peta jalan (roadmap) pendidikan yang telah ditetapkan yayasan. 
+              <p>Dengan adanya keselarasan ini, program-program lingkungan tidak lagi berjalan sebagai kegiatan tambahan, melainkan menjadi bagian integral dari identitas dan target capaian mutu yang dievaluasi secara berkala oleh yayasan.</p> 
+            </p>
+          </div>
+
+          <h3>Komitmen Melampaui Penghargaan</h3>
+          <p>Kepala SMP Tunas Agro menegaskan bahwa esensi dari penyusunan program ini bukan sekadar mengejar status atau penghargaan Adiwiyata semata. Melalui workshop penyelarasan dengan yayasan yang telah dilakukan, pihak sekolah memastikan bahwa langkah menuju sekolah hijau telah didukung penuh secara struktural. Fokus utamanya adalah menciptakan ekosistem belajar yang asri, sehingga nilai-nilai keberlanjutan dapat mendarah daging dalam karakter dan keseharian seluruh siswa.</p>
+          <p>Upaya ini dipandang sebagai langkah nyata dalam menciptakan institusi pendidikan yang tidak hanya unggul dalam pencapaian akademis, tetapi juga menjadi pelopor dalam gerakan ramah lingkungan di bawah naungan visi yayasan yang solid. Dengan demikian, SMP Tunas Agro optimistis dapat mencetak generasi yang cerdas sekaligus memiliki kepedulian tinggi terhadap kelestarian bumi.</p>
+        </article>
+
+        <!-- Bagian Aksi (Berbagi) -->
+        <div
+          class="mt-12 pt-6 border-t border-gray-200 flex justify-between items-center"
+        >
+          <a
+            href="Semua_Berita.html"
+            class="text-emerald-600 font-semibold hover:underline transition"
+          >
+            <i class="fas fa-arrow-left mr-2"></i> Kembali ke Daftar Berita
+          </a>
+          <div class="flex items-center space-x-3">
+            <span class="text-gray-600 font-medium">Bagikan:</span>
+            <button class="text-gray-400 hover:text-emerald-600 transition">
+              <i class="fab fa-facebook-f text-lg"></i>
+            </button>
+            <button class="text-gray-400 hover:text-emerald-600 transition">
+              <i class="fab fa-twitter text-lg"></i>
+            </button>
+            <button class="text-gray-400 hover:text-emerald-600 transition">
+              <i class="fab fa-whatsapp text-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer (Sama dengan Halaman Utama) -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- Kolom 1: Logo & Deskripsi -->
+        <div>
+          <h3 class="text-2xl font-extrabold text-emerald-400 mb-4">
+            <i class="fas fa-leaf mr-2"></i> SMP TA Adiwiyata
+          </h3>
+          <p class="text-gray-400 text-sm">
+            Pusat pendidikan yang berkomitmen penuh pada pelestarian lingkungan
+            dan budaya hijau.
+          </p>
+        </div>
+
+        <!-- Kolom 2: Navigasi Cepat -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Navigasi</h4>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a
+                href="index.html#about"
+                class="text-gray-400 hover:text-emerald-400 transition"
+                >Tentang Kami</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#program"
+                class="text-gray-400 hover:text-emerald-400 transition"
+                >Program Unggulan</a
+              >
+            </li>
+            <li>
+              <a
+                href="index.html#berita"
+                class="text-gray-400 hover:text-emerald-400 transition"
+                >Berita Terbaru</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: Kontak -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Hubungi</h4>
+          <p class="text-gray-400 text-sm">Email: kontak.smpta@gmail.com</p>
+          <p class="text-gray-400 text-sm mt-1">Telp: 0821-5515-6080</p>
+          <p class="text-gray-400 text-sm mt-1">
+            Alamat: PT Agro Indomas, Jl. Jendral Sudirman km. 75, Sampit -
+            Pangkalan Bun
+          </p>
+        </div>
+
+        <!-- Kolom 4: Sosial Media -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4 text-white">Ikuti Kami</h4>
+          <div class="flex space-x-4">
+            <a
+              href="https://www.instagram.com/smptunasagro_seruyan"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="https://www.youtube.com/@timsmpta9741"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-youtube"></i
+            ></a>
+            <!-- Ikon TikTok Baru -->
+            <a
+              href="https://www.tiktok.com/@timsmpta"
+              class="text-gray-400 hover:text-emerald-400 text-xl transition"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center border-t border-gray-700 pt-6 mt-8">
+        <p class="text-gray-500 text-sm">
+          &copy; 2025 Adiwiyata SMP Tunas Agro. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Skrip JavaScript untuk Menu Mobile -->
+    <script>
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+  </body>
+</html>
